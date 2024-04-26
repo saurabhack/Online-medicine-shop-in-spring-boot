@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="https://img.shop.com/Image/resources/logos/shop-s-logo-icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            font-family: Roboto,Arial,Helvetica,sans-serif;
+        }
+        #navbar{
+            display: flex;
+            background: #f0f1f7;
+            -webkit-box-shadow: 0 0 8px #202340;
+            box-shadow: 0 0 8px #202340;
+            padding: 5px 10px;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            justify-content: space-between;
+            padding-top: 7.5px;
+            margin-bottom: 50px;
+        }
+        #navbar>img{
+            width: 200px;
+        }
+
+        #navbar>a{
+            margin-right: 30px;
+            margin-top: 4px;
+            color: black;
+            font-weight: bolder;
+            color: #202340;
+            font-family: Roboto,Arial,Helvetica,sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: bold;
+        }
+        #navbar>a:hover{
+           color:#00a8ca ;
+           text-decoration: none;
+        }
+        /* mid css */
+        #mid{
+            display: block;
+            justify-content: center;
+            width: 1400px;
+            margin:auto
+        }
+        .Checkout{
+            display: flex;
+            width: 1200px;
+            justify-content: space-between;
+            align-items: center;
+            margin-block-start: 0.67em;
+            margin-block-end: 0.67em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            margin: auto;
+            padding: 27px;
+        }
+        .Checkout>h1{
+            display: block;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .threebuttons{
+            display: flex;
+            width: 1200px;
+            align-items: center;
+            margin: auto;
+        }
+        .threebuttons button{
+            font-size: 20px;
+            padding:8px 10px 8px 10px;
+            background-color: #F0F1F7;
+            border-radius: 5px;
+            /* gap: 25px; */
+            margin-right: 10px;
+        }
+        .threebuttons>:first-child{
+            background-color: #545871;
+            color:white;
+        }
+        /* mid-bottom css */
+        #bottom{
+            display: flex;
+            padding-left: 15px;
+            justify-content: space-between;
+            margin: 0 40 40 40px;
+        }
+        #left{
+            width:60%;
+        }
+        #left1{
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .right{
+            border: #00a8ca;
+            margin-right: 50px ;
+        }
+        #right1{
+            margin-top: 20px;
+            font-weight: 600;
+            color: #545871;
+        }
+        #right2{
+            margin-top: 5px;
+        }
+        #right3{
+            display: flex;
+            justify-content: space-between;
+            padding-right: 5px;
+            margin-top: 20px;
+        }
+        #right3a,#right3b{
+            font-size: 16px;
+            font-weight: 700;
+            color: #202340;
+        }
+        #right4{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-right: 5px;
+        }
+        #right4a,#right4b{
+             font-size: 14px;
+             /* font-weight: 700; */
+            color: #202340;
+        }
+        #right5{
+            background-color: teal;
+            margin-top: 10px;
+            height: 2px;
+        }
+        #right6{
+            width: 90%;
+            text-align: center;
+            font-size: 20px;
+            background-color: #414467;
+            color: white;
+            margin-left: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-top: 10px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+        }
+        #right8{
+            margin-top: 10px;
+        }
+        #right8 a,#right9 a{
+            color:#414467;
+            font-size: small;
+        }
+        #right8 ,#right9 {
+            /* color:#414467; */
+            font-size: small;
+        }
+        #right9{
+            margin-left: 20px;
+            margin-top: 20px;
+            background-color: #F0F1f7;
+            color:#202340;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            width:400px;
+            text-align: center;
+        }
+        /* footer  */
+        /* cart footer */
+        #cart-footer{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            background: #f0f1f7;
+            border-top: 2px solid #bfc1cd;
+            position: absolute;
+            left: 0;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-top: 100px;
+        }
+        #cart-footer p{
+            font-size: 12px;
+        }
+        #cart-footer a{
+            text-decoration: none;
+            color: inherit;
+        }
+        #cart-footer div:last-child{
+            text-align: end;
+        }
+        #cart-footer img{
+            width: 25%;
+        }
+        #cart-footer p:last-child:hover{
+            color: #00a8ca;
+            cursor: pointer;
+        }
+        /* adress box  */
+
+        #boxx{
+            display: flex;
+            border: 1px dashed #545871;
+            gap: 10px;
+            padding: 10px;
+            font-style: italic;
+        }
+        #boxx1 p{
+            margin: 2px;
+        }
+        #boxx1{
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media screen and (max-width: 700px) {
+        #bottom{
+            display: flex;
+            flex-direction: column;
+            padding-left: 15px;
+        }
+        hr{
+            width: 48%;
+        }
+        #right4,#right3,#right2,#right5,#boxx{
+            width: 48%;
+        }
+        #right6{
+            width:20%;
+            margin-left: 28%;
+            margin-bottom: 20px;
+        }
+        #rightl1{
+            margin-top: 30px;
+        }
+        #left1{
+            width: 45%;
+        }
+        #checkout{
+            width: 45%;
+            /* background-color: #00a8ca; */
+            margin-left: 0px;
+        }
+        .threebuttons{
+            width: 45%;
+            /* background-color: #00a8ca; */
+            margin-left: 30px;
+        }
+        #right7,#right8,#right9{
+            margin-top: 10px;
+            width: 45%;
+            text-align: center;
+        }
+
+        }
+        #main {
+ width: 95%;
+ margin: auto;
+}
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: sans-serif;
+}
+
+#nav1 {
+ height: 60px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 10px;
+ margin-bottom: 10px;
+ background-color: rgb(255, 241, 217);
+
+}
+
+#Navbar {
+ position: sticky;
+ top: 0;
+ background-color: white;
+ z-index: 4;
+
+}
+
+.left a {
+ text-decoration: none;
+ color: black;
+ margin-left: 15px;
+ font-weight: bold;
+ font-size: 15px;
+}
+.left img{
+ width: 150px;
+}
+.rigth img{
+ width:30px;
+}
+.left a:hover {
+ color: red;
+ text-decoration:overline;
+}
+
+.rigth a {
+ text-decoration: none;
+ color: black;
+ margin-left: 8px;
+ font-size: 15px;
+}
+
+.rigth a:hover{
+ color: rgb(165, 160, 160);
+
+}
+/* #nav1 div img {
+ width: 10%;
+
+} */
+#nav2 {
+ align-items: center;
+ display: flex;
+ margin: auto;
+ justify-content: space-between;
+}
+
+#nav2 div {
+ display: flex;
+ align-items: center;
+}
+
+#nav2 input {
+ width: 60%;
+ margin-right: 20px;
+ height: 40px;
+ border: none;
+ background-color: rgb(245, 237, 237);
+ padding: 10px;
+ border-radius: 5px;
+}
+
+#nav2 button {
+ border: none;
+ background-color: rgb(255, 111, 97);
+ width: 80px;
+ height: 30px;
+ border-radius: 5px;
+ margin-left: 10px;
+
+}
+
+#footer p {
+  color: gray;
+}
+
+
+
+#footer-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  padding: 10px;
+  margin-bottom: 30px;
+
+
+}
+
+#footer-search input {
+  width: 400px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  background-color: aliceblue;
+
+}
+
+#footer-search button {
+  width: 150px;
+  height: 40px;
+  margin-left: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(255, 111, 97);
+  font-size: 15px;
+}
+
+#footer-search p {
+  font-size: 18px;
+}
+
+#main-footer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(255, 252, 248);
+  padding: 10px;
+}
+
+#main-footer img {
+  width: 20px;
+}
+
+#main-footer p {
+  color: gray;
+  font-size: 12px;
+}
+
+#main-footer button {
+  width: 100px;
+  height: 30px;
+  margin-left: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(255, 111, 97);
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+#last-footer {
+  display: flex;
+  margin-top: 20px;
+  background-color: rgb(255, 252, 248);
+}
+
+#last-footer {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+#last-footer div p {
+  color: gray;
+  font-size: 12px;
+}
+
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#content div {
+  position: relative;
+  cursor: pointer;
+  text-align: justify;
+}
+
+#content div a {
+  display: block;
+  font-size: 13px;
+  color: gray;
+
+}
+#content div a:hover{
+  text-decoration: underline;
+}
+
+#content div section {
+  background-color: white;
+  padding: 10px;
+  position: absolute;
+  width: max-content;
+  min-width: 100%;
+  display: none;
+  z-index: 10;
+}
+
+#content div:hover section {
+  display: block;
+}
+#content h4:hover{
+  color: red;
+  text-decoration: underline;
+}
+
+#content div section div {
+  padding: 10px;
+}
+
+#content div section h4 {
+  font-size: 14px;
+}
+
+.end div {
+  margin: auto;
+  width: 100px;
+  padding: 10px;
+  margin-top: 20px;
+
+}
+
+.end img {
+  width: 100%;
+
+}
+
+.end {
+  margin-top: 100px;
+  text-align: center;
+  background-color: rgb(255, 252, 248);
+
+
+}
+
+#all-prod {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+
+}
+
+#all-prod>div {
+  padding: 20px;
+  border-radius: 10px;
+
+}
+
+#all-prod div button {
+  background-color: rgb(11, 91, 94);
+  color: white;
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+
+}
+
+#all-prod div p {
+  color: gray;
+}
+
+#all-prod div h4 {
+  color: rgb(11, 91, 94);
+}
+
+#all-prod div div img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+
+#all-prod>div:hover {
+  box-shadow: rgba(17, 172, 40, 0.2) 0px 7px 29px 0px;
+}
+
+
+.model {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background-color: #0000005c;
+  left: 0;
+  display: none;
+  z-index: 5;
+
+}
+
+#log {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  background-color: white;
+  display: flex;
+  width: 60%;
+  gap: 40px;
+  justify-content: space-between;
+  padding: 20px;
+  overflow: hidden;
+  box-shadow: 0px 1px 5px white;
+}
+
+#log div button {
+  background-color: rgb(255, 111, 97);
+  border: none;
+  width: 350px;
+  border-radius: 5px;
+  height: 40px;
+  color: white;
+  font-size: 17px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#log div input {
+  height: 40px;
+  width: 350px;
+  padding: 10px;
+}
+
+#r h1 {
+  text-align: left;
+  font-size: 30px;
+}
+
+#r {
+  padding: 20px;
+
+  border-left: 2px solid rgb(224, 222, 222);
+}
+
+#l {
+  text-align: center;
+}
+
+#l p {
+  text-align: center;
+  font-size: 15px;
+  color: gray;
+}
+
+.model.open {
+  display: block;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  scale: 1.5;
+  cursor: pointer;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider>div {
+  display: flex;
+  width: 500%;
+  animation: slide 50s infinite linear backwards;
+
+}
+
+.slider img {
+  width: 20%;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%)
+  }
+
+  20% {
+    transform: translateX(-20%)
+  }
+
+  40% {
+    transform: translateX(-40%)
+  }
+
+  60% {
+    transform: translateX(-60%)
+  }
+
+  80% {
+    transform: translateX(-80%)
+  }
+
+}
+#main label:hover{
+   color: red;
+   text-decoration: underline;
+}
+
+/* medium screen */
+
+@media only screen and (max-width:1033px){
+#nav1 .rigth{
+  display: none;
+}
+#heath-cons {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+#all-prod{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+#all-prod{
+  grid-template-columns: repeat(3,1r);
+}
+#brand{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+}
+
+}
+
+/* small screen */
+
+@media only screen and (max-width:750px){
+  #nav1 .rigth{
+    display: none;
+  }
+  #heath-cons {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  #all-prod{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  #main-footer{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  #all-prod{
+    grid-template-columns: repeat(2,1r);
+  }
+  #brand{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  }
+  #last-footer{
+    flex-direction: column;
+  }
+
+  }
+  #main-footer p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  #main-footer h3:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    color: red;
+  }
+
+
+
+    </style>
+</head>
+<body>
+<div id="Navbar">
+    <div id="nav1">
+        <div class="left">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/PharmEasy_logo.png" alt="">
+            <a th:href="@{/medicine}">MEDICINES</a>
+            <a th:href="@{/aboutUs}">About</a>
+            <a th:href="@{/feedBack}">FeedBack</a>
+            <a th:href="@{/contact}">Contact</a>
+        </div>
+        <div class="rigth">
+            <a href='javascript:document.querySelector("#login").classList.toggle("open")' id="logbtn" sec:authentication="principal.username"></a> |
+            <i class="fas fa-sign-out-alt"></i> <a href="#" id="logoutLink" style="color: red;" onclick="submitForm()">Logout</a>
+
+            <a href="">Offer</a>
+            <a th:href="@{/cart}"> <img src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png" alt=""></a>
+            <a href="">Need Help?</a>
+
+            <!--<form th:action="@{/logout}" method="POST" id="sinup">
+                <input type="submit" value="logout" style="color:red; background-color:white">
+            </form>
+            <h5 id="loginbtn"> <i class="fa-solid fa-user"></i> Logout</h5>
+             <a href="logout">logout</a>-->
+
+
+            <!-- OR use a button -->
+            <!-- <button id="logoutButton" style="color: red;" onclick="submitForm()">Logout</button> -->
+
+            <!-- Your existing form -->
+            <form th:action="@{/logout}" method="POST" id="signup" style="display: none;">
+                <!-- You can include any additional form fields if needed -->
+                <!-- For CSRF protection, include the CSRF token if your framework requires it -->
+                <!-- <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" /> -->
+            </form>
+
+            <!-- Add this script to handle the form submission -->
+            <script>
+                function submitForm() {
+                    document.getElementById('signup').submit();
+                }
+            </script>
+        </div>
+
+
+
+    </div>
+</div>
+
+<!-- TOP SECTION  -->
+<!--  <div id="navbar">
+     <img style="cursor:pointer" src="https://img.shop.com/Image/resources/logos/shop-logo-us.svg" alt="shop.com logo" onclick="fun1()">
+     <a style="cursor:pointer" href="./project.html" onclick="fun1()">Continue Shopping</a>
+ </div>
+ --> <!-- MIDDLE SECTON  -->
+<div id="mid">
+    <div class="Checkout" id="checkout">
+        <h1>Checkout</h1>
+        <p style="font-size: 1.05em;">Order Total: $<span id="total">0.00</span> </p>
+    </div>
+    <div class="threebuttons">
+        <button>Address</button>
+        <button>Shipping</button>
+        <button>Payment</button>
+    </div>
+    <br>
+    <hr id="line33">
+    <br>
+    <div id="bottom" >
+        <div id="left">
+            <div id="left1">
+                <p id="line4a" style="font-weight: bold;">Shipping Address</p>
+                <a id="line4b"style="cursor:pointer; color:#2E2C38 ;" th:href="@{/addAddress}" >add address</a>
+            </div>
+            <br>
+            <p id="address" href="" >Choose Address</p>
+            <div id="left">
+                <div id="boxx" th:each="addres:${address}">
+                    <input type="radio">
+                    <div id="boxx1">
+                        <p th:text="${addres.firstName} +' '+ ${addres.lastName}" ></p>
+                        <p th:text="${addres.address}" ></p>
+                        <p th:text="${addres.city}"></p>
+                        <p th:text="${addres.state}" ></p>
+                        <p th:text="${addres.zip}"></p>
+                        <p th:text="${addres.phone}"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="right3b">
+                <p id="total"></p>
+            </div>
+
+
+            <!-- address fill via js -->
+        </div>
+        <div class="right">
+            <h2 id="rightl1">Order Summary</h2>
+            <hr id="right2">
+            <div id="right3">
+                <p id="right3a">Order Total:</p>
+                <p id="right3b">₹<span id="total" th:text="${add}"></span></p>
+            </div>
+            <div id="right4">
+                <p id="right4a"><img src="https://img.shop.com/Image/resources/images/cashback-icon.svg" alt="cashback-icon" style="width: 14px;"> Cashback earned on this order:</p>
+                <p id="right4b">₹1.29</p>
+            </div>
+            <hr id="right5">
+            <a  th:href="@{/Summery}"><button style="cursor:pointer;" id="right6">Continue Checkout</button></a>
+            <p id="right7">By clicking continue, you agree to the PharmEasy</p>
+            <p id="right8"><a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+            <p id="right9">Let us know how we are doing <a href="#">Send Feedback</a></p>
+        </div>
+    </div>
+</div>
+<!-- footer  -->
+<!-- <div id="cart-footer">
+    <div class="dis">
+        <p>© 1997-2023 Market America, Inc. or its affiliates. All other designated trademarks, copyrights, and
+            brands are the property of their respective owners. (famos-p11)</p>
+        <p>Privacy Policy | Terms of Use | Advertising Disclosure | Return Policy | Shipping Information</p>
+    </div>
+    <div>
+        <a href="">
+            <img src="https://www.aiowork.com/wp-content/uploads/2021/06/digicert-ssl-certificate.png" alt="">
+        </a>
+    </div>
+</div> -->
+<div id="footer">
+</div>
+<div id="footer-search">
+    <p>Get the link to dowanload App</p>
+    <input type="number" placeholder="Enter Phone number" >
+    <button>Send Link</button>
+</div>
+</div>
+<div id="main-footer">
+    <div>
+        <h3>Know Us</h3><br>
+        <p>About Us</p><br>
+        <p>Contect Us</p><br>
+        <p>Press Coverage</p><br>
+        <p>Careers</p><br>
+        <p>Business Partnership</p><br>
+        <p>Become a Health</p><br>
+        <p>Partner</p><br>
+        <p>Corporate Governance</p><br>
+    </div>
+    <div>
+        <h3>Our Policies</h3><br>
+        <p>Privacy Policy</p><br>
+        <p>Terms and Conditions</p><br>
+        <p>Editorial Policy</p><br>
+        <p>Return Policy</p><br>
+        <p>IP Policy</p><br>
+        <p>Grievence Redressal Policy</p><br>
+        <p>Fake Job and Fraud</p><br>
+        <p>Disclaimer</p><br>
+    </div>
+    <div>
+        <h3>Our Services</h3><br>
+        <p>Order</p><br>
+        <p>Medicines</p><br>
+        <p>Book Lab Tests</p><br>
+        <p>Consult a Doctor</p><br>
+        <p>Ayurveda Articles</p><br>
+        <p>Hindi Articles</p><br>
+        <p>Care Plan</p><br>
+    </div>
+    <div>
+        <h3>Connect</h3><br>
+        <p>Social Link</p><br>
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="">
+        <img src="https://cdn-icons-png.flaticon.com/128/3256/3256013.png" alt="">
+        <img src="https://cdn-icons-png.flaticon.com/128/3938/3938026.png" alt="">
+        <img src="https://cdn-icons-png.flaticon.com/128/3536/3536505.png" alt="">
+        <p>Want daily does of health?</p>
+        <button>SIGN UP</button>
+    </div>
+    <div>
+        <h2>Dowanload App</h2>
+        <img src="https://cdn-icons-png.flaticon.com/128/300/300218.png" alt="">
+    </div>
+</div>
+
+<div id="last-footer">
+    <div>
+        <img src="https://onemg.gumlet.io/secure-rebrand_x6f8yq.svg" alt="">
+        <div>
+            <h3>Reliable</h3>
+            <p>All products displayed on Tata 1mg <br> are procured from verified and <br> licensed pharmacies. All labs
+                listed <br>on the platform are accredited</p>
+        </div>
+    </div>
+    <div>
+        <img src="https://onemg.gumlet.io/reliable-rebrand_rcpof3.svg" alt="">
+        <h3>Secure</h3>
+        <p>Tata 1mg uses Secure Sockets<br> Layer (SSL) 128-bit encryption and <br>is Payment Card Industry Data
+            <br>Security Standard (PCI DSS)<br> compliant
+        </p>
+    </div>
+    <div>
+        <img src="https://onemg.gumlet.io/affordable-rebrand_ivgidq.svg" alt="">
+        <h3>Affordable<h3>
+            <p>Find affordable medicine<br> substitutes, save up to 50% on <br>health products, up to 80% off on
+                <br>lab
+                tests and free doctor <br>consultations.
+            </p>
+    </div>
+
+</div>
+<div class="end">
+    <div>
+        <img src="https://onemg.gumlet.io/URS_ebgmxc.png" alt="">
+    </div>
+    <p>India's only LegitScript and ISO/IEC 27001 certified online healthcare platform</p>
+</div><br><br>
+<p style="color: gray; margin-bottom: 10px;">© 2023 Tata 1mg. All rights reserved. In compliance with Drugs and
+    Cosmetics Act, 1940 and Drugs and Cosmetics Rules, 1945, we don't process requests for Schedule X and other habit
+    forming drugs.</p>
+</div>
+
+<div class="model" id="login" name="model">
+    <div id="log">
+        <span class="close" onclick="this.closest('.model').classList.toggle('open')">&times;</span>
+        <div id="l">
+            <img src="https://www.1mg.com/images/login-signup/Your-Go-To-Health-App.png" alt="">
+            <h2 style="text-align: left;">Medical Healthcare Simpler</h2>
+            <p style="text-align: left;">Get Medical information, order medicines, book lab <br> tests and consult doctors
+                online from the confort of <br>your home.</p>
+        </div>
+        <div id="r">
+            <h1>Login</h1>
+            <p style="font-size: 13px; color: grey;">Det access to your order, lab tests & doctor consultations</p>
+            <br><br><br>
+
+
+            <form id="logForm">
+
+                <input type="text" name="email" placeholder="Enter Email ID or Mobile Number" required><br> <br>
+                <input type="password" name="password" placeholder="Enter password" required>
+
+                <br><br><br>
+                <button type="submit" id="logBtn">LOGIN</button>
+            </form>
+            <p style="margin-bottom: 10px;">New on Medi Good? <span style="color: coral;">Sign Up</span></p>
+            <p style="color: gray; font-size: 13px;">By logging in, you agree to our <br> <span><u>Terms and Conditions &
+              Privacy Policy</u></span></p>
+            <p style="color: coral; font-weight: bold; margin-top: 20px;">Need Help? Get In Touch</p>
+        </div>
+    </div>
+
+
+</div>
+<div class="model" id="singup" name="model">
+    <div id="log">
+        <span class="close" onclick="this.closest('.model').classList.toggle('open')">&times;</span>
+        <div id="l">
+            <img src="https://www.1mg.com/images/login-signup/Your-Go-To-Health-App.png" alt="">
+            <h2 style="text-align: left;">Medical Healthcare Simpler</h2>
+            <p style="text-align: left;">Get Medical information, order medicines, book lab <br> tests and consult doctors
+                online from the confort of <br>your home.</p>
+        </div>
+        <div id="r">
+            <h1>Sign Up</h1>
+            <p style="font-size: 13px; color: grey;">Det access to your order, lab tests & doctor consultations</p>
+            <br><br><br>
+
+            <form action="" id="signForm">
+
+
+
+
+                <input type="text" name="name" placeholder="Enter Full Name" required><br> <br>
+                <input type="text" name="age" placeholder="Enter Your Age" required><br> <br>
+                <input type="email" name="email" placeholder="Enter Email" required><br> <br>
+                <input type="password" name="password" placeholder="Enter Login password" required>
+
+                <br><br><br>
+                <button type="submit" id="subbtn">SUBMIT</button>
+            </form>
+            <p style="margin-bottom: 10px;">New on Medi Good? <span style="color: coral;">Sign Up</span></p>
+            <p style="color: gray; font-size: 13px;">By logging in, you agree to our <br> <span><u>Terms and Conditions &
+              Privacy Policy</u></span></p>
+            <p style="color: coral; font-weight: bold; margin-top: 20px;">Need Help? Get In Touch</p>
+        </div>
+
+    </div>
+
+
+</div>
+</body>
+</html>
+<script>
+    /* // localStorage.setItem("total-payment",JSON.parse(localStorage.getItem("local-subtotal")))
+    {% comment %} total=JSON.parse(localStorage.getItem("local-subtotal"))||0
+    document.querySelector("#total").textContent=total
+    document.querySelector("#right3b>#total").textContent=total
+    var address=JSON.parse(localStorage.getItem("address-form"))
+    showaddress(address)
+    function showaddress(obj){
+        console.log("hi",address)
+        var div1=document.createElement("div")
+        div1.setAttribute("id","boxx")
+        var input=document.createElement("input")
+        input.setAttribute("type","radio")
+        var name=document.createElement("p")
+        name.innerText=obj.firstname1+" "+obj.lastname1;
+        var address= document.createElement("p")
+        address.textContent=obj.address1;
+        var city=document.createElement("p")
+        city.innerText=obj.city1;
+        var state=document.createElement("p")
+        state.innerText= obj.state1;
+        var zip=document.createElement("p")
+        zip.textContent= obj.zip1;
+        var phone=document.createElement("p")
+        phone.textContent= obj.phone1;
+        var div2=document.createElement("div")
+        div2.setAttribute("id","boxx1")
+        div2.append(name,address,city,state,phone)
+        div1.append(input,div2)
+        document.getElementById("left").append(div1)
+    }
+    function fun1(){
+        window.open("../project.html","_self")
+    } {% endcomment %} */
+</script>

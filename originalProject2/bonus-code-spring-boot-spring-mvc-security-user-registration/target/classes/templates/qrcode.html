@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/inulute_icn.ico" type="image/x-icon" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <title>UPI inulute@boi</title>
+    <style>
+
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    user-select: none;
+    height: auto;
+    background-image: url("/assets/background.svg");
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0.2, 0.2, 0.2, 0.2);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 350px;
+    overflow-x: hidden;
+    margin: 5%;
+    height: auto;
+
+}
+
+
+.qr-code img {
+    max-width: 100%;
+    height: auto;
+  }
+
+.upi-id {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.upi-id-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+.upi-id strong {
+    color: #007bff;
+    user-select: text;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.copy-button {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    height: min-content;
+    cursor: pointer;
+}
+
+
+.upi-id p {
+    margin: 0;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+  }
+.upi-icon {
+    width: 40px;
+    height: auto;
+    margin-top: 10px;
+
+}
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="qr-container">
+        <div class="qr-code">
+            <img src="https://s3.shunyafoundation.com/s3/939a16e3ccadc3d88066e0ae47410d8ef9db9cb8/upi-qr-code.png" alt="UPI QR Code">
+        </div>
+        <div class="upi-id">
+            <p>Scan the QR code or use the UPI ID:</p>
+            <div class="upi-id-content">
+                <strong id="upi-id">PharmEasy@boi</strong>
+                <button id="copy-button" class="copy-button">Copy</button>
+                <lottie-player
+                        src="https://lottie.host/2b51d7af-7099-49f5-93df-f8190dde11bb/WU9eejAueC.json"
+                        background="#FFFFFF"
+                        speed="1.5"
+                        loop
+                        autoplay
+                        direction="1"
+                        mode="normal" class="upi-icon"
+                ></lottie-player>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>document.addEventListener("DOMContentLoaded", function () {
+        const copyButton = document.getElementById("copy-button");
+        const upiIdText = document.getElementById("upi-id");
+
+        copyButton.addEventListener("click", function () {
+            const textToCopy = upiIdText.textContent;
+
+            const tempInput = document.createElement("input");
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            copyButton.textContent = "Copied!";
+
+            setTimeout(function () {
+                copyButton.textContent = "Copy";
+            }, 2500);
+        });
+
+        document.addEventListener("contextmenu", function(event) {
+        event.preventDefault();
+    });
+    });
+</script>
+</body>
+</html>

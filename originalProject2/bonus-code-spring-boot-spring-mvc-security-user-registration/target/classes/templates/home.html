@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmEassy.com</title>
+    <script src="script.js" defer></script>
+</head>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+    #main {
+  width: 95%;
+  margin: auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+#nav1 {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(255, 241, 217);
+
+}
+
+#Navbar {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 4;
+
+}
+
+.left a {
+  text-decoration: none;
+  color: black;
+  margin-left: 15px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.left img{
+  width: 150px;
+}
+.rigth img{
+  width:30px;
+}
+.left a:hover {
+  color: red;
+  text-decoration:overline;
+}
+
+.rigth a {
+  text-decoration: none;
+  color: black;
+  margin-left: 8px;
+  font-size: 15px;
+}
+
+.rigth a:hover{
+  color: rgb(165, 160, 160);
+
+}
+/* #nav1 div img {
+  width: 10%;
+
+} */
+
+#nav2 {
+  align-items: center;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
+
+#nav2 div {
+  display: flex;
+  align-items: center;
+}
+
+#nav2 input {
+  width: 60%;
+  margin-right: 20px;
+  height: 40px;
+  border: none;
+  background-color: rgb(245, 237, 237);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#nav2 button {
+  border: none;
+  background-color: rgb(255, 111, 97);
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  margin-left: 10px;
+
+}
+
+#poster img {
+  width: 100%;
+
+}
+
+#content {
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+}
+
+.pera {
+  text-align: center;
+  color: gray;
+  height: 40px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+#content a {
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+  font-size: 15px;
+
+}
+
+#content a:hover {
+  color: red;
+
+}
+
+#poster {
+  display: flex;
+  overflow: hidden;
+}
+
+#heath-cons {
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  overflow-y: hidden;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+#heath-cons div {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#mid-part {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  padding: 20px;
+  margin-top: 20px;
+
+}
+
+.mid-img {
+  display: flex;
+  gap: 20px;
+  overflow-y: hidden;
+  padding: 10px;
+}
+
+.mid-img div {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#heath-cons div:hover {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.mid-img div:hover {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+#brand {
+  display: flex;
+  gap: 20px;
+  overflow-y: hidden;
+  margin: auto;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+#brand div {
+  text-align: center;
+}
+
+#about {
+  display: flex;
+  padding: 10px;
+  justify-content: space-evenly;
+}
+
+#about div {
+  text-align: center;
+  padding: 10px;
+}
+
+#footer p {
+  color: gray;
+}
+
+
+
+#footer-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  padding: 10px;
+  margin-bottom: 30px;
+
+
+}
+
+#footer-search input {
+  width: 400px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  background-color: aliceblue;
+
+}
+
+#footer-search button {
+  width: 150px;
+  height: 40px;
+  margin-left: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(255, 111, 97);
+  font-size: 15px;
+}
+
+#footer-search p {
+  font-size: 18px;
+}
+
+#main-footer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(255, 252, 248);
+  padding: 10px;
+}
+
+#main-footer img {
+  width: 20px;
+}
+
+#main-footer p {
+  color: gray;
+  font-size: 12px;
+}
+
+#main-footer button {
+  width: 100px;
+  height: 30px;
+  margin-left: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(255, 111, 97);
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+#last-footer {
+  display: flex;
+  margin-top: 20px;
+  background-color: rgb(255, 252, 248);
+}
+
+#last-footer {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+#last-footer div p {
+  color: gray;
+  font-size: 12px;
+}
+
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#content div {
+  position: relative;
+  cursor: pointer;
+  text-align: justify;
+}
+
+#content div a {
+  display: block;
+  font-size: 13px;
+  color: gray;
+
+}
+#content div a:hover{
+  text-decoration: underline;
+}
+
+#content div section {
+  background-color: white;
+  padding: 10px;
+  position: absolute;
+  width: max-content;
+  min-width: 100%;
+  display: none;
+  z-index: 10;
+}
+
+#content div:hover section {
+  display: block;
+}
+#content h4:hover{
+  color: red;
+  text-decoration: underline;
+}
+
+#content div section div {
+  padding: 10px;
+}
+
+#content div section h4 {
+  font-size: 14px;
+}
+
+.end div {
+  margin: auto;
+  width: 100px;
+  padding: 10px;
+  margin-top: 20px;
+
+}
+
+.end img {
+  width: 100%;
+
+}
+
+.end {
+  margin-top: 100px;
+  text-align: center;
+  background-color: rgb(255, 252, 248);
+
+
+}
+
+#all-prod {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+
+}
+
+#all-prod>div {
+  padding: 20px;
+  border-radius: 10px;
+
+}
+
+#all-prod div button {
+  background-color: rgb(11, 91, 94);
+  color: white;
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+
+}
+
+#all-prod div p {
+  color: gray;
+}
+
+#all-prod div h4 {
+  color: rgb(11, 91, 94);
+}
+
+#all-prod div div img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+
+#all-prod>div:hover {
+  box-shadow: rgba(17, 172, 40, 0.2) 0px 7px 29px 0px;
+}
+
+
+.model {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background-color: #0000005c;
+  left: 0;
+  display: none;
+  z-index: 5;
+
+}
+
+#log {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  background-color: white;
+  display: flex;
+  width: 60%;
+  gap: 40px;
+  justify-content: space-between;
+  padding: 20px;
+  overflow: hidden;
+  box-shadow: 0px 1px 5px white;
+}
+
+#log div button {
+  background-color: rgb(255, 111, 97);
+  border: none;
+  width: 350px;
+  border-radius: 5px;
+  height: 40px;
+  color: white;
+  font-size: 17px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#log div input {
+  height: 40px;
+  width: 350px;
+  padding: 10px;
+}
+
+#r h1 {
+  text-align: left;
+  font-size: 30px;
+}
+
+#r {
+  padding: 20px;
+
+  border-left: 2px solid rgb(224, 222, 222);
+}
+
+#l {
+  text-align: center;
+}
+
+#l p {
+  text-align: center;
+  font-size: 15px;
+  color: gray;
+}
+
+.model.open {
+  display: block;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  scale: 1.5;
+  cursor: pointer;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider>div {
+  display: flex;
+  width: 500%;
+  animation: slide 50s infinite linear backwards;
+
+}
+
+.slider img {
+  width: 20%;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%)
+  }
+
+  20% {
+    transform: translateX(-20%)
+  }
+
+  40% {
+    transform: translateX(-40%)
+  }
+
+  60% {
+    transform: translateX(-60%)
+  }
+
+  80% {
+    transform: translateX(-80%)
+  }
+
+}
+#main label:hover{
+   color: red;
+   text-decoration: underline;
+}
+
+/* medium screen */
+
+@media only screen and (max-width:1033px){
+#nav1 .rigth{
+  display: none;
+}
+#heath-cons {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+#all-prod{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+#all-prod{
+  grid-template-columns: repeat(3,1r);
+}
+#brand{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+}
+
+}
+
+/* small screen */
+
+@media only screen and (max-width:750px){
+  #nav1 .rigth{
+    display: none;
+  }
+  #heath-cons {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  #all-prod{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  #main-footer{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  #all-prod{
+    grid-template-columns: repeat(2,1r);
+  }
+  #brand{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  }
+  #last-footer{
+    flex-direction: column;
+  }
+
+  }
+  #main-footer p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  #main-footer h3:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    color: red;
+  }
+</style>
+
+<body>
+
+<div id="Navbar">
+    <div id="nav1">
+        <div class="left">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/PharmEasy_logo.png" alt="">
+            <a th:href="@{/medicine}">MEDICINES</a>
+            <a th:href="@{/aboutUs}">About</a>
+            <a th:href="@{/feedBack}">FeedBack</a>
+            <a th:href="@{/contact}">Contact</a>
+        </div>
+        <div class="rigth">
+            <a href='javascript:document.querySelector("#login").classList.toggle("open")' id="logbtn" sec:authentication="principal.username"></a> |
+            <i class="fas fa-sign-out-alt"></i> <a href="#" id="logoutLink" style="color: red;" onclick="submitForm()">Logout</a>
+
+            <a href="">Offer</a>
+            <a th:href="@{/cart}"> <img src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png" alt=""></a>
+            <a href="">Need Help?</a>
+
+            <!--<form th:action="@{/logout}" method="POST" id="sinup">
+                <input type="submit" value="logout" style="color:red; background-color:white">
+            </form>
+            <h5 id="loginbtn"> <i class="fa-solid fa-user"></i> Logout</h5>
+             <a href="logout">logout</a>-->
+
+
+            <!-- OR use a button -->
+            <!-- <button id="logoutButton" style="color: red;" onclick="submitForm()">Logout</button> -->
+
+            <!-- Your existing form -->
+            <form th:action="@{/logout}" method="POST" id="signup" style="display: none;">
+                <!-- You can include any additional form fields if needed -->
+                <!-- For CSRF protection, include the CSRF token if your framework requires it -->
+                <!-- <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" /> -->
+            </form>
+
+            <!-- Add this script to handle the form submission -->
+            <script>
+                function submitForm() {
+                    document.getElementById('signup').submit();
+                }
+            </script>
+        </div>
+
+
+
+    </div>
+</div>
+<div id="nav2">
+    <input type="search" name="search" id="search" placeholder="🔍 Search for Medicines and Health Product">
+    <div>
+        <p>QUICK BUY! GET 15% off on medicines</p>
+        <button>Quick order</button>
+    </div>
+</div>
+</div>
+
+
+
+    <div id="poster">
+        <div class="slider">
+            <div>
+                <img
+                        src="https://onemg.gumlet.io/10e0fa7a-8f03-476f-afcb-3ea9ae28cb20_1674554314.jpg?w=1013&h=250&format=auto"
+                        alt="">
+                <img
+                        src="https://onemg.gumlet.io/38cc426b-ade4-48b3-8b59-a73339915244_1679393359.png?w=1013&h=250&format=auto"
+                        alt="">
+                <img
+                        src="https://onemg.gumlet.io/2b6cc808-948a-47cf-8176-c52237f217a4_1679385424.png?w=1013&h=250&format=auto"
+                        alt="">
+                <img
+                        src="https://onemg.gumlet.io/95a1dc10-5e23-495d-88cc-f398622c1715_1678907436.png?w=1013&h=250&format=auto"
+                        alt="">
+                <img
+                        src="https://onemg.gumlet.io/d4223940-c74e-4b98-b865-b5e64768625b_1672658920.png?w=1013&h=250&format=auto"
+                        alt="">
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="pera">
+        <p>PharmEasy: India's Leading Online Pharmacy & Health Platform</p>
+    </div>
+    <div>
+        <img style="width: 100%;" src="https://onemg.gumlet.io/marketing/29087450-0f25-4856-96fc-62f4ea81bbd3.png" alt="">
+    </div>
+    <div id="heath-cons">
+        <div>
+            <img
+                    src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/c2a0598f-483c-48ff-9783-71e402aa28d3.png"
+                    alt="">
+            <p>Diabetes Care</p>
+        </div>
+        <div>
+            <img
+                    src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/ab1da5f4-c074-47d2-b278-a5fbd2c93f1f.png"
+                    alt="">
+            <p>Cardiac Care</p>
+        </div>
+        <div>
+            <img
+                    src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/702457a8-ff7d-43a6-bd1d-6bcb278ce686.png"
+                    alt="">
+            <p>Stomach Care</p>
+        </div>
+        <div>
+            <img
+                    src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/995e64ba-5bd9-42bc-8db6-5dc0b821c89d.png"
+                    alt="">
+            <p>Liver Care</p>
+        </div>
+        <div>
+            <img
+                    src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/ba975795-98dc-4cd8-8b55-3c20230d70e3.png"
+                    alt="">
+            <p>Bone,Joint & Muscle Care</p>
+        </div>
+        <div>
+            <img
+                    src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/e77d5099-d905-4462-ab9d-b51802e3739b.png"
+                    alt="">
+            <p>Kidney Care</p>
+        </div>
+        <div>
+            <img
+                    src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/6f9a726a-4a98-42e6-a834-67381be5e330.png"
+                    alt="">
+            <p>Derma Care</p>
+        </div>
+        <div>
+            <img
+                    src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/4a788b46-97f3-460e-afb6-428368f779ee.png"
+                    alt="">
+            <p>Respiratory Care</p>
+        </div>
+        <div>
+            <img
+                    src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/631e3dca-3d5b-49f8-832b-8341ec4784e7.png"
+                    alt="">
+            <p>Eye Care</p>
+        </div>
+    </div>
+
+    <p style="font-size: 25px; margin-bottom: 20px; margin-top: 20px;">Featured barnds</p>
+    <div id="mid-part">
+
+        <div class="mid-img">
+            <div>
+                <img
+                        src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/cdb36765-0dc7-43d4-81e8-106dddb9e970.png"
+                        alt="">
+                <p>Cetaphil</p>
+            </div>
+            <div>
+                <img
+                        src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/f1c85f6b-737b-4330-87f8-3bb5ad647495.png"
+                        alt="">
+                <p>Organic India</p>
+            </div>
+            <div>
+                <img
+                        src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/d499a94b-a3d9-4ba9-9c1e-b9d233e2ce79.png"
+                        alt="">
+                <p>Dr. Norepen</p>
+            </div>
+            <div>
+                <img
+                        src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/b1eb4ea9-0a15-4a45-9c79-63478b73ec4d.png"
+                        alt="">
+                <p>Bournvita</p>
+            </div>
+            <div>
+                <img
+                        src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/3b2f13fc-381b-4306-94f6-65ce3c88cc25.png"
+                        alt="">
+                <p>Baidyanath(Nagpur)</p>
+            </div>
+            <div>
+                <img
+                        src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/b33da4e8-ed75-422d-9964-a13601bc7285.png"
+                        alt="">
+                <p>Wellness</p>
+            </div>
+            <div>
+                <img
+                        src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/c113948e-cb12-4582-aa5e-1b4af442ddc7.png"
+                        alt="">
+                <p>Protinex</p>
+            </div>
+            <div>
+                <img
+                        src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/459ab067-8cb6-446a-b0d1-8b8a718ad701.png"
+                        alt="">
+                <p>Tejasaya Ayurveda</p>
+            </div>
+            <div>
+                <img
+                        src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/fbb2dcab-f58d-4cc3-a94b-e8829133dada.png"
+                        alt="">
+                <p>TATA 1mg Health Products</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 style="color:green; margin: 30px; text-decoration: underline;">All Products</h2>
+
+    <div id="all-prod">
+        <!-- append product here -->
+
+
+    </div>
+
+    <p style="font-size: 25px; margin-bottom: 20px; margin-top: 20px;">Ayurveda top brands</p>
+    <div id="brand">
+        <div>
+            <img src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/onneibznnitqsn5twumi.png" alt="">
+            <p>Dabar</p>
+        </div>
+        <div>
+            <img src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/dekl61bd9thu21vmypkm.png" alt="">
+            <p>Baidyanath</p>
+        </div>
+        <div>
+            <img src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/idgjl700nkz6w8lzvjwc.png" alt="">
+            <p>Dhootapapeshwar</p>
+        </div>
+        <div>
+            <img src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/yv774ayhbypuxi28dhs0.png" alt="">
+            <p>TAVA 1mg Health Porducts</p>
+        </div>
+        <div>
+            <img src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xemgonnppssxvagkjxzd.png" alt="">
+            <p>Himalaya</p>
+        </div>
+        <div>
+            <img src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/guiy84rk41kgofd5atft.png" alt="">
+            <p>Jiva Ayurveda</p>
+        </div>
+        <div>
+            <img src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/shxhntpjye31tu8frfjs.png" alt="">
+            <p>Kerala Ayurveda</p>
+        </div>
+        <div>
+            <img src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/ktzih4wnm4xfynusrep6.png" alt="">
+            <p>Zandu</p>
+        </div>
+    </div><br><br>
+
+    <!-- here is footer -->
+    <div id="footer">
+        <h4>Stay Healthy with Tata 1mg: Your Favourite Online Pharmacy and Healthcare Platform</h4>
+        <h5>We Bring Care to Health.</h5>
+        <p>Tata 1mg is India's leading digital healthcare platform. From doctor consultations on chat to online pharmacy
+            and lab tests at home: we have it all covered for you. Having delivered over 25 million orders in 1000+ cities
+            till date, we are on a mission to bring "care" to "health" to give you a flawless healthcare experience.</p>
+        <div id="main-about">
+            <p>INDIA'S</p>
+            <div id="about">
+                <div>
+                    <h2>206m+</h2>
+                    <p>Visitors</p>
+                </div>
+                <div>
+                    <h2>31m++</h2>
+                    <p>Orders Delivered</p>
+                </div>
+                <div>
+                    <h2>1800+</h2>
+                    <p>Cities</p>
+                </div>
+            </div>
+        </div>
+        <div id="footer-search">
+            <p>Get the link to dowanload App</p>
+            <input type="number" placeholder="Enter Phone number">
+            <button>Send Link</button>
+        </div>
+    </div>
+    <div id="main-footer">
+        <div>
+            <h3>Know Us</h3><br>
+            <p>About Us</p><br>
+            <p>Contect Us</p><br>
+            <p>Press Coverage</p><br>
+            <p>Careers</p><br>
+            <p>Business Partnership</p><br>
+            <p>Become a Health</p><br>
+            <p>Partner</p><br>
+            <p>Corporate Governance</p><br>
+        </div>
+        <div>
+            <h3>Our Policies</h3><br>
+            <p>Privacy Policy</p><br>
+            <p>Terms and Conditions</p><br>
+            <p>Editorial Policy</p><br>
+            <p>Return Policy</p><br>
+            <p>IP Policy</p><br>
+            <p>Grievence Redressal Policy</p><br>
+            <p>Fake Job and Fraud</p><br>
+            <p>Disclaimer</p><br>
+        </div>
+        <div>
+            <h3>Our Services</h3><br>
+            <p>Order</p><br>
+            <p>Medicines</p><br>
+            <p>Book Lab Tests</p><br>
+            <p>Consult a Doctor</p><br>
+            <p>Ayurveda Articles</p><br>
+            <p>Hindi Articles</p><br>
+            <p>Care Plan</p><br>
+        </div>
+        <div>
+            <h3>Connect</h3><br>
+            <p>Social Link</p><br>
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="">
+            <img src="https://cdn-icons-png.flaticon.com/128/3256/3256013.png" alt="">
+            <img src="https://cdn-icons-png.flaticon.com/128/3938/3938026.png" alt="">
+            <img src="https://cdn-icons-png.flaticon.com/128/3536/3536505.png" alt="">
+            <p>Want daily does of health?</p>
+            <button>SIGN UP</button>
+        </div>
+        <div>
+            <h2>Dowanload App</h2>
+            <img src="https://cdn-icons-png.flaticon.com/128/300/300218.png" alt="">
+        </div>
+    </div>
+
+    <div id="last-footer">
+        <div>
+            <img src="https://onemg.gumlet.io/secure-rebrand_x6f8yq.svg" alt="">
+            <div>
+                <h3>Reliable</h3>
+                <p>All products displayed on Tata 1mg <br> are procured from verified and <br> licensed pharmacies. All labs
+                    listed <br>on the platform are accredited</p>
+            </div>
+        </div>
+        <div>
+            <img src="https://onemg.gumlet.io/reliable-rebrand_rcpof3.svg" alt="">
+            <h3>Secure</h3>
+            <p>Tata 1mg uses Secure Sockets<br> Layer (SSL) 128-bit encryption and <br>is Payment Card Industry Data
+                <br>Security Standard (PCI DSS)<br> compliant
+            </p>
+        </div>
+        <div>
+            <img src="https://onemg.gumlet.io/affordable-rebrand_ivgidq.svg" alt="">
+            <h3>Affordable<h3>
+                <p>Find affordable medicine<br> substitutes, save up to 50% on <br>health products, up to 80% off on
+                    <br>lab
+                    tests and free doctor <br>consultations.
+                </p>
+        </div>
+
+    </div>
+    <div class="end">
+        <div>
+            <img src="https://onemg.gumlet.io/URS_ebgmxc.png" alt="">
+        </div>
+        <p>India's only LegitScript and ISO/IEC 27001 certified online healthcare platform</p>
+    </div><br><br>
+    <p style="color: gray; margin-bottom: 10px;">© 2023 Tata 1mg. All rights reserved. In compliance with Drugs and
+        Cosmetics Act, 1940 and Drugs and Cosmetics Rules, 1945, we don't process requests for Schedule X and other habit
+        forming drugs.</p>
+</div>
+
+<div class="model" id="login" name="model">
+    <div id="log">
+        <span class="close" onclick="this.closest('.model').classList.toggle('open')">&times;</span>
+        <div id="l">
+            <img src="https://www.1mg.com/images/login-signup/Your-Go-To-Health-App.png" alt="">
+            <h2 style="text-align: left;">Medical Healthcare Simpler</h2>
+            <p style="text-align: left;">Get Medical information, order medicines, book lab <br> tests and consult doctors
+                online from the confort of <br>your home.</p>
+        </div>
+        <div id="r">
+            <h1>Login</h1>
+            <p style="font-size: 13px; color: grey;">Det access to your order, lab tests & doctor consultations</p>
+            <br><br><br>
+
+
+            <form id="logForm">
+
+                <input type="text" name="email" placeholder="Enter Email ID or Mobile Number" required><br> <br>
+                <input type="password" name="password" placeholder="Enter password" required>
+
+                <br><br><br>
+                <button type="submit" id="logBtn">LOGIN</button>
+            </form>
+            <p style="margin-bottom: 10px;">New on Medi Good? <span style="color: coral;">Sign Up</span></p>
+            <p style="color: gray; font-size: 13px;">By logging in, you agree to our <br> <span><u>Terms and Conditions &
+              Privacy Policy</u></span></p>
+            <p style="color: coral; font-weight: bold; margin-top: 20px;">Need Help? Get In Touch</p>
+        </div>
+    </div>
+
+
+</div>
+<div class="model" id="singup" name="model">
+    <div id="log">
+        <span class="close" onclick="this.closest('.model').classList.toggle('open')">&times;</span>
+        <div id="l">
+            <img src="https://www.1mg.com/images/login-signup/Your-Go-To-Health-App.png" alt="">
+            <h2 style="text-align: left;">Medical Healthcare Simpler</h2>
+            <p style="text-align: left;">Get Medical information, order medicines, book lab <br> tests and consult doctors
+                online from the confort of <br>your home.</p>
+        </div>
+        <div id="r">
+            <h1>Sign Up</h1>
+            <p style="font-size: 13px; color: grey;">Det access to your order, lab tests & doctor consultations</p>
+            <br><br><br>
+
+            <form action="" id="signForm">
+
+
+
+
+                <input type="text" name="name" placeholder="Enter Full Name" required><br> <br>
+                <input type="text" name="age" placeholder="Enter Your Age" required><br> <br>
+                <input type="email" name="email" placeholder="Enter Email" required><br> <br>
+                <input type="password" name="password" placeholder="Enter Login password" required>
+
+                <br><br><br>
+                <button type="submit" id="subbtn">SUBMIT</button>
+            </form>
+            <p style="margin-bottom: 10px;">New on Medi Good? <span style="color: coral;">Sign Up</span></p>
+            <p style="color: gray; font-size: 13px;">By logging in, you agree to our <br> <span><u>Terms and Conditions &
+              Privacy Policy</u></span></p>
+            <p style="color: coral; font-weight: bold; margin-top: 20px;">Need Help? Get In Touch</p>
+        </div>
+
+    </div>
+
+
+</div>
+</body>
+
+</html>

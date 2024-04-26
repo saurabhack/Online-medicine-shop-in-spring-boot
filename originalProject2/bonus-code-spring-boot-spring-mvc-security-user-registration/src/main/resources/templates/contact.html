@@ -1,0 +1,1107 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    /* background-color:#0056b3; */
+    background-color: #F8F0E5;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    /* background-color:aliceblue; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #EADBC8;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea,select {
+    width: 99%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.btn {
+    background-color:#948677 ;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0F2C59;
+}
+
+.gender-label {
+    margin-right: 10px;
+}
+
+
+    *{
+                padding: 0px;
+                margin: 0px;
+                font-family: Roboto,Arial,Helvetica,sans-serif;
+            }
+    .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        /*  header style starts */
+        .site-banner {
+            min-height: 400px;
+            background-image: url('images/header-image.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+        }
+
+        .site-banner a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px;
+        }
+
+        .header-menu {
+            padding: 40px 20px;
+        }
+
+        #header-right-menu {
+            float: right;
+        }
+
+        .header-active {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 25px;
+            color:black;
+        }
+
+        .heading {
+            color: #ffffff;
+            text-align: center;
+            font-family: cursive;
+            padding: 40px 0px;
+            font-size: 3em;
+            margin: 0px;
+            color:black;
+        }
+        /*  header style ends */
+
+        .footer {
+            display: flex;
+        }
+
+        .footer-column {
+            width: 33.3%;
+            float: left;
+        }
+
+        .map-image {
+            width: 100%;
+        }
+
+        .contact-form-container {
+            background-color: #eaeaea;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        .tile-content {
+            padding: 20px 40px;
+        }
+
+        .tile-content .contact-row {
+            margin-bottom: 20px;
+        }
+
+        .tile-field {
+            margin-left: 20px;
+        }
+
+        .form-field {
+            width: 100%;
+            padding: 10px 8px;
+            border-radius: 4px;
+            border: #d9d8d8 1px solid;
+        }
+
+        .button {
+            color: #ffffff;
+            padding: 10px 30px 10px 30px;
+            border-radius: 20px;
+            background: linear-gradient(to right, #08a9df, #12054a);
+            border: 0px;
+        }
+
+        #menu-icon {
+            display: none;
+            float: right;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .footer-column {
+                width: 50%;
+            }
+            .contact-form-container {
+                width: 100%;
+            }
+            .footer {
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 540px) {
+            #header-right-menu {
+                float: none;
+                display: none;
+            }
+            #header-right-menu a {
+                display: block;
+            }
+            .heading {
+                padding: 0px;
+            }
+            .tile-content {
+                padding: 0px 20px;
+            }
+
+            .footer-column {
+                width: 100%;
+            }
+
+            #menu-icon {
+                display: block;
+                float: right;
+            }
+        }
+
+            #navbar{
+                display: flex;
+/*                 background: #f0f1f7; */
+                -webkit-box-shadow: 0 0 8px #202340;
+                box-shadow: 0 0 8px #202340;
+                padding: 5px 10px;
+                /* position: fixed; */
+                /* position:absolute; */
+                top: 0;
+                width: 100%;
+                z-index: 10;
+                justify-content: space-between;
+                padding-top: 7.5px;
+                margin-bottom: 50px;
+            }
+            #navbar>img{
+                width: 200px;
+            }
+            /* #navbar>img:hover{
+                border: 1px dashed black;
+                position: relative
+            } */
+            #navbar>a{
+                margin-right: 30px;
+                margin-top: 4px;
+                color: black;
+                font-weight: bolder;
+                color: #202340;
+                font-family: Roboto,Arial,Helvetica,sans-serif;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: bold;
+            }
+            #navbar>a:hover{
+               color:#00a8ca ;
+               text-decoration: none;
+            }
+            /* MID SECTION  */
+            #mid{
+                margin: auto;
+            }
+            #body{
+                display: flex;
+                flex-direction: column;
+                margin-top: 70px;
+                padding: 10px;
+                margin: auto;
+                /* border: 2px solid #202340; */
+                justify-content: space-evenly;
+                width: 1000px;
+
+            }
+            #heading_ship{
+                color:#202340;
+                font-family: 'Roboto','Arial';
+                margin-left:10px;
+                /* margin-top: 10px; */
+                padding-top: 15px;
+                margin-bottom: 10px;
+            }
+            #fiels{
+                font-size: 14px;
+                font-family: 'Roboto','Arial';
+                color:#545871;
+                margin-left: 5px;
+                margin-bottom: 10px;
+
+            }
+            #form{
+                display: grid;
+                grid-template-columns: repeat(2,45%);
+                justify-content: space-between;
+                /* border: 1px solid red; */
+            }
+            .label{
+                /* font-size: .875rem; */
+                display: block;
+                margin-left: 10px;
+                font-size: 20px;
+
+            }
+            #form input{
+                font-size: 20px;
+                padding: 8px;
+                margin-top: 8px;
+                font-style: italic;
+                width: 95%;
+                margin-bottom: 25px;
+            }
+            select{
+                 font-size: 18px;
+                padding: 8px;
+                margin-top: 8px;
+                font-style: italic;
+                 width: 95%;
+                margin-bottom: 25px;
+                /* font-weight: bolder;  */
+
+            }
+            #_box{
+                display: flex;
+                margin-left: 10px;
+                padding: 5px;
+            }
+            #phone{
+                font-size: 20px;
+                margin-top: 20px;
+
+            }
+            #phone input{
+                width: 30%;
+                font-size: 18px;
+                padding: 8px;
+            }
+            #box2{
+                display: flex;
+                margin-left: 10px;
+            }
+            #box2 label{
+                font-size: 18px;
+            }
+            #checkbox1{
+                position: relative;
+                cursor: pointer;
+            }
+             #checkbox1{
+                width: 20px;
+            }
+            #phone123{
+                display: flex;
+                /* justify-content: space-between; */
+                margin-top: 7px;
+            }
+            #cancel{
+            color:#202340 ;
+            /* height: 40px; */
+            padding: 10px;
+            border-radius: 20px;
+            }
+            #save{
+
+             border-radius: 20px;
+             background-color: #202340;
+             color: white;
+             margin-left: 100px;
+             padding: 7px;
+             width: 250px;
+             font-size: large;
+             }
+             #phone{
+                font-size: 20px;
+                padding: 8px;
+                margin-top: 8px;
+                font-style: italic;
+                width: 95%;
+                margin-bottom: 25px;
+             }
+             #main {
+     width: 95%;
+     margin: auto;
+    }
+
+    * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: sans-serif;
+    }
+
+    #nav1 {
+     height: 60px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 10px;
+     margin-bottom: 10px;
+     background-color: rgb(255, 241, 217);
+
+    }
+
+    #Navbar {
+     position: sticky;
+     top: 0;
+/*      background-color: white; */
+     z-index: 4;
+
+    }
+
+    .left a {
+     text-decoration: none;
+     color: black;
+     margin-left: 15px;
+     font-weight: bold;
+     font-size: 15px;
+    }
+    .left img{
+     width: 150px;
+    }
+    .rigth img{
+     width:30px;
+    }
+    .left a:hover {
+     color: red;
+     text-decoration:overline;
+    }
+
+    .rigth a {
+     text-decoration: none;
+     color: black;
+     margin-left: 8px;
+     font-size: 15px;
+    }
+
+    .rigth a:hover{
+     color: rgb(165, 160, 160);
+
+    }
+    /* #nav1 div img {
+     width: 10%;
+
+    } */
+    #nav2 {
+     align-items: center;
+     display: flex;
+     margin: auto;
+     justify-content: space-between;
+    }
+
+    #nav2 div {
+     display: flex;
+     align-items: center;
+    }
+
+    #nav2 input {
+     width: 60%;
+     margin-right: 20px;
+     height: 40px;
+     border: none;
+     background-color: rgb(245, 237, 237);
+     padding: 10px;
+     border-radius: 5px;
+    }
+
+    #nav2 button {
+     border: none;
+     background-color: rgb(255, 111, 97);
+     width: 80px;
+     height: 30px;
+     border-radius: 5px;
+     margin-left: 10px;
+
+    }
+
+    #footer p {
+      color: gray;
+    }
+
+
+
+    #footer-search {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+      padding: 10px;
+      margin-bottom: 30px;
+
+
+    }
+
+    #footer-search input {
+      width: 400px;
+      height: 40px;
+      padding: 10px;
+      border: none;
+      background-color: aliceblue;
+
+    }
+
+    #footer-search button {
+      width: 150px;
+      height: 40px;
+      margin-left: 10px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      background-color: rgb(255, 111, 97);
+      font-size: 15px;
+    }
+
+    #footer-search p {
+      font-size: 18px;
+    }
+
+    #main-footer {
+      display: flex;
+      justify-content: space-evenly;
+      background-color: rgb(255, 252, 248);
+      padding: 10px;
+    }
+
+    #main-footer img {
+      width: 20px;
+    }
+
+    #main-footer p {
+      color: gray;
+      font-size: 12px;
+    }
+
+    #main-footer button {
+      width: 100px;
+      height: 30px;
+      margin-left: 10px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      background-color: rgb(255, 111, 97);
+      font-size: 15px;
+      margin-top: 10px;
+    }
+
+    #last-footer {
+      display: flex;
+      margin-top: 20px;
+      background-color: rgb(255, 252, 248);
+    }
+
+    #last-footer {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: space-evenly;
+    }
+
+    #last-footer div p {
+      color: gray;
+      font-size: 12px;
+    }
+
+    #content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    #content div {
+      position: relative;
+      cursor: pointer;
+      text-align: justify;
+    }
+
+    #content div a {
+      display: block;
+      font-size: 13px;
+      color: gray;
+
+    }
+    #content div a:hover{
+      text-decoration: underline;
+    }
+
+    #content div section {
+      background-color: white;
+      padding: 10px;
+      position: absolute;
+      width: max-content;
+      min-width: 100%;
+      display: none;
+      z-index: 10;
+    }
+
+    #content div:hover section {
+      display: block;
+    }
+    #content h4:hover{
+      color: red;
+      text-decoration: underline;
+    }
+
+    #content div section div {
+      padding: 10px;
+    }
+
+    #content div section h4 {
+      font-size: 14px;
+    }
+
+    .end div {
+      margin: auto;
+      width: 100px;
+      padding: 10px;
+      margin-top: 20px;
+
+    }
+
+    .end img {
+      width: 100%;
+
+    }
+
+    .end {
+      margin-top: 100px;
+      text-align: center;
+      background-color: rgb(255, 252, 248);
+
+
+    }
+
+    #all-prod {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+
+    }
+
+    #all-prod>div {
+      padding: 20px;
+      border-radius: 10px;
+
+    }
+
+    #all-prod div button {
+      background-color: rgb(11, 91, 94);
+      color: white;
+      width: 120px;
+      height: 30px;
+      border-radius: 5px;
+
+    }
+
+    #all-prod div p {
+      color: gray;
+    }
+
+    #all-prod div h4 {
+      color: rgb(11, 91, 94);
+    }
+
+    #all-prod div div img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: contain;
+    }
+
+    #all-prod>div:hover {
+      box-shadow: rgba(17, 172, 40, 0.2) 0px 7px 29px 0px;
+    }
+
+
+    .model {
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      background-color: #0000005c;
+      left: 0;
+      display: none;
+      z-index: 5;
+
+    }
+
+    #log {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: relative;
+      background-color: white;
+      display: flex;
+      width: 60%;
+      gap: 40px;
+      justify-content: space-between;
+      padding: 20px;
+      overflow: hidden;
+      box-shadow: 0px 1px 5px white;
+    }
+
+    #log div button {
+      background-color: rgb(255, 111, 97);
+      border: none;
+      width: 350px;
+      border-radius: 5px;
+      height: 40px;
+      color: white;
+      font-size: 17px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #log div input {
+      height: 40px;
+      width: 350px;
+      padding: 10px;
+    }
+
+    #r h1 {
+      text-align: left;
+      font-size: 30px;
+    }
+
+    #r {
+      padding: 20px;
+
+      border-left: 2px solid rgb(224, 222, 222);
+    }
+
+    #l {
+      text-align: center;
+    }
+
+    #l p {
+      text-align: center;
+      font-size: 15px;
+      color: gray;
+    }
+
+    .model.open {
+      display: block;
+    }
+
+    .close {
+      position: absolute;
+      right: 20px;
+      scale: 1.5;
+      cursor: pointer;
+    }
+
+    .slider {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .slider>div {
+      display: flex;
+      width: 500%;
+      animation: slide 50s infinite linear backwards;
+
+    }
+
+    .slider img {
+      width: 20%;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(0%)
+      }
+
+      20% {
+        transform: translateX(-20%)
+      }
+
+      40% {
+        transform: translateX(-40%)
+      }
+
+      60% {
+        transform: translateX(-60%)
+      }
+
+      80% {
+        transform: translateX(-80%)
+      }
+
+    }
+    #main label:hover{
+       color: red;
+       text-decoration: underline;
+    }
+
+    /* medium screen */
+
+    @media only screen and (max-width:1033px){
+    #nav1 .rigth{
+      display: none;
+    }
+    #heath-cons {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+    }
+    #all-prod{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+    }
+    #all-prod{
+      grid-template-columns: repeat(3,1r);
+    }
+    #brand{
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+    }
+
+    }
+
+    /* small screen */
+
+    @media only screen and (max-width:750px){
+      #nav1 .rigth{
+        display: none;
+      }
+      #heath-cons {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+      }
+      #all-prod{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+      }
+      #main-footer{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+      }
+      #all-prod{
+        grid-template-columns: repeat(2,1r);
+      }
+      #brand{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+      }
+      #last-footer{
+        flex-direction: column;
+      }
+
+      }
+      #main-footer p:hover{
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      #main-footer h3:hover{
+        text-decoration: underline;
+        cursor: pointer;
+        color: red;
+      }
+
+  </style>
+</head>
+<body>
+
+<div id="Navbar">
+  <div id="nav1">
+    <div class="left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/PharmEasy_logo.png" alt="">
+      <a th:href="@{/medicine}">MEDICINES</a>
+      <a href="">About</a>
+      <a th:href="@{/feedBack}">FeedBack</a>
+      <a th:href="@{/contact}">Contact</a>
+
+    </div>
+    <div class="rigth">
+      <a href='javascript:document.querySelector("#login").classList.toggle("open")' id="logbtn" sec:authentication="principal.username"></a> |
+      <i class="fas fa-sign-out-alt"></i> <a href="#" id="logoutLink" style="color: red;" onclick="submitForm()">Logout</a>
+
+      <a href="">Offer</a>
+      <a th:href="@{/cart}"> <img src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png" alt=""></a>
+      <a href="">Need Help?</a>
+
+      <!--<form th:action="@{/logout}" method="POST" id="sinup">
+          <input type="submit" value="logout" style="color:red; background-color:white">
+      </form>
+      <h5 id="loginbtn"> <i class="fa-solid fa-user"></i> Logout</h5>
+       <a href="logout">logout</a>-->
+
+
+      <!-- OR use a button -->
+      <!-- <button id="logoutButton" style="color: red;" onclick="submitForm()">Logout</button> -->
+
+      <!-- Your existing form -->
+      <form th:action="@{/logout}" method="POST" id="signup" style="display: none;">
+        <!-- You can include any additional form fields if needed -->
+        <!-- For CSRF protection, include the CSRF token if your framework requires it -->
+        <!-- <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" /> -->
+      </form>
+
+      <!-- Add this script to handle the form submission -->
+      <script>
+        function submitForm() {
+            document.getElementById('signup').submit();
+        }
+      </script>
+    </div>
+
+
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="site-banner">
+
+    <h1 class="heading">Contact Us</h1>
+  </div><div class="footer">
+  <div class="footer-column"><img class="map-image" src="https://www.google.com/maps/d/thumbnail?mid=1Q_XUP80EyawBs4eY4gQk0FEp3BQ&hl=en_US" /></div>
+  <div class="footer-column">
+    <div class="tile-content">
+      <h1>Meet Us</h1>
+      <div class="contact-row">
+        <img style="width:10%" src="https://cdn3.iconfinder.com/data/icons/social-media-logos-glyph/2048/5302_-_Whatsapp-512.png"><span class="tile-field">+91 9960909025</span>
+      </div>
+      <div class="contact-row">
+        <img style="width: 10%;" src="https://t4.ftcdn.net/jpg/05/25/22/63/360_F_525226337_x7lLRcnU08vDLkijRwgcbaIs8zCfDktC.jpg"><span class="tile-field">contact@admin.com</span>
+      </div>
+      <div class="contact-row">
+        <img style="width:5%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdfLK28QUHtzk-ylVtDO7U_4Kw6_FggHvoEg&usqp=CAU"><span class="tile-field">1784 Griffin Street, Delhi</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-column contact-form-container">
+    <div class="tile-content">
+      <form method="POST" th:action="@{/contactSave}" th:object="${con}">
+        <h1>Contact</h1>
+        <div class="contact-row">
+          <input th:field="*{name}" type="text" class="form-field" placeholder="Name">
+        </div>
+
+        <div class="contact-row">
+          <input th:field="*{email}" type="text" class="form-field" placeholder="Email">
+        </div>
+        <div class="contact-row">
+          <textarea th:field="*{message}" rows="5" class="form-field" placeholder="Message"></textarea>
+        </div>
+        <button class="button">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="footer">
+</div>
+<div id="footer-search">
+  <p>Get the link to dowanload App</p>
+  <input type="number" placeholder="Enter Phone number" >
+  <button>Send Link</button>
+</div>
+</div>
+<div id="main-footer">
+  <div>
+    <h3>Know Us</h3><br>
+    <p>About Us</p><br>
+    <p>Contect Us</p><br>
+    <p>Press Coverage</p><br>
+    <p>Careers</p><br>
+    <p>Business Partnership</p><br>
+    <p>Become a Health</p><br>
+    <p>Partner</p><br>
+    <p>Corporate Governance</p><br>
+  </div>
+  <div>
+    <h3>Our Policies</h3><br>
+    <p>Privacy Policy</p><br>
+    <p>Terms and Conditions</p><br>
+    <p>Editorial Policy</p><br>
+    <p>Return Policy</p><br>
+    <p>IP Policy</p><br>
+    <p>Grievence Redressal Policy</p><br>
+    <p>Fake Job and Fraud</p><br>
+    <p>Disclaimer</p><br>
+  </div>
+  <div>
+    <h3>Our Services</h3><br>
+    <p>Order</p><br>
+    <p>Medicines</p><br>
+    <p>Book Lab Tests</p><br>
+    <p>Consult a Doctor</p><br>
+    <p>Ayurveda Articles</p><br>
+    <p>Hindi Articles</p><br>
+    <p>Care Plan</p><br>
+  </div>
+  <div>
+    <h3>Connect</h3><br>
+    <p>Social Link</p><br>
+    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="">
+    <img src="https://cdn-icons-png.flaticon.com/128/3256/3256013.png" alt="">
+    <img src="https://cdn-icons-png.flaticon.com/128/3938/3938026.png" alt="">
+    <img src="https://cdn-icons-png.flaticon.com/128/3536/3536505.png" alt="">
+    <p>Want daily does of health?</p>
+    <button>SIGN UP</button>
+  </div>
+  <div>
+    <h2>Dowanload App</h2>
+    <img src="https://cdn-icons-png.flaticon.com/128/300/300218.png" alt="">
+  </div>
+</div>
+
+<div id="last-footer">
+  <div>
+    <img src="https://onemg.gumlet.io/secure-rebrand_x6f8yq.svg" alt="">
+    <div>
+      <h3>Reliable</h3>
+      <p>All products displayed on Tata 1mg <br> are procured from verified and <br> licensed pharmacies. All labs
+        listed <br>on the platform are accredited</p>
+    </div>
+  </div>
+  <div>
+    <img src="https://onemg.gumlet.io/reliable-rebrand_rcpof3.svg" alt="">
+    <h3>Secure</h3>
+    <p>Tata 1mg uses Secure Sockets<br> Layer (SSL) 128-bit encryption and <br>is Payment Card Industry Data
+      <br>Security Standard (PCI DSS)<br> compliant
+    </p>
+  </div>
+  <div>
+    <img src="https://onemg.gumlet.io/affordable-rebrand_ivgidq.svg" alt="">
+    <h3>Affordable<h3>
+      <p>Find affordable medicine<br> substitutes, save up to 50% on <br>health products, up to 80% off on
+        <br>lab
+        tests and free doctor <br>consultations.
+      </p>
+  </div>
+
+</div>
+<div class="end">
+  <div>
+    <img src="https://onemg.gumlet.io/URS_ebgmxc.png" alt="">
+  </div>
+  <p>India's only LegitScript and ISO/IEC 27001 certified online healthcare platform</p>
+</div><br><br>
+<p style="color: gray; margin-bottom: 10px;">© 2023 Tata 1mg. All rights reserved. In compliance with Drugs and
+  Cosmetics Act, 1940 and Drugs and Cosmetics Rules, 1945, we don't process requests for Schedule X and other habit
+  forming drugs.</p>
+</div>
+
+<div class="model" id="login" name="model">
+  <div id="log">
+    <span class="close" onclick="this.closest('.model').classList.toggle('open')">&times;</span>
+    <div id="l">
+      <img src="https://www.1mg.com/images/login-signup/Your-Go-To-Health-App.png" alt="">
+      <h2 style="text-align: left;">Medical Healthcare Simpler</h2>
+      <p style="text-align: left;">Get Medical information, order medicines, book lab <br> tests and consult doctors
+        online from the confort of <br>your home.</p>
+    </div>
+    <div id="r">
+      <h1>Login</h1>
+      <p style="font-size: 13px; color: grey;">Det access to your order, lab tests & doctor consultations</p>
+      <br><br><br>
+
+
+      <form id="logForm">
+
+        <input type="text" name="email" placeholder="Enter Email ID or Mobile Number" required><br> <br>
+        <input type="password" name="password" placeholder="Enter password" required>
+
+        <br><br><br>
+        <button type="submit" id="logBtn">LOGIN</button>
+      </form>
+      <p style="margin-bottom: 10px;">New on Medi Good? <span style="color: coral;">Sign Up</span></p>
+      <p style="color: gray; font-size: 13px;">By logging in, you agree to our <br> <span><u>Terms and Conditions &
+  Privacy Policy</u></span></p>
+      <p style="color: coral; font-weight: bold; margin-top: 20px;">Need Help? Get In Touch</p>
+    </div>
+  </div>
+
+
+</div>
+<div class="model" id="singup" name="model">
+  <div id="log">
+    <span class="close" onclick="this.closest('.model').classList.toggle('open')">&times;</span>
+    <div id="l">
+      <img src="https://www.1mg.com/images/login-signup/Your-Go-To-Health-App.png" alt="">
+      <h2 style="text-align: left;">Medical Healthcare Simpler</h2>
+      <p style="text-align: left;">Get Medical information, order medicines, book lab <br> tests and consult doctors
+        online from the confort of <br>your home.</p>
+    </div>
+    <div id="r">
+      <h1>Sign Up</h1>
+      <p style="font-size: 13px; color: grey;">Det access to your order, lab tests & doctor consultations</p>
+      <br><br><br>
+
+      <form action="" id="signForm">
+
+
+
+
+        <input type="text" name="name" placeholder="Enter Full Name" required><br> <br>
+        <input type="text" name="age" placeholder="Enter Your Age" required><br> <br>
+        <input type="email" name="email" placeholder="Enter Email" required><br> <br>
+        <input type="password" name="password" placeholder="Enter Login password" required>
+
+        <br><br><br>
+        <button type="submit" id="subbtn">SUBMIT</button>
+      </form>
+      <p style="margin-bottom: 10px;">New on Medi Good? <span style="color: coral;">Sign Up</span></p>
+      <p style="color: gray; font-size: 13px;">By logging in, you agree to our <br> <span><u>Terms and Conditions &
+  Privacy Policy</u></span></p>
+      <p style="color: coral; font-weight: bold; margin-top: 20px;">Need Help? Get In Touch</p>
+    </div>
+
+  </div>
+
+
+</div>
+
+
+
+<script>
+  function toggleMenu() {
+      var menuElement = document.getElementById("header-right-menu");
+      if (menuElement.style.display === "block") {
+          menuElement.style.display = "none";
+      } else {
+          menuElement.style.display = "block";
+      }
+  }
+</script>
+</body>
+</html>
